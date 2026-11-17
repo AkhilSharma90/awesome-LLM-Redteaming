@@ -4,7 +4,11 @@
 
 > How to *measure* attacks and defences on common ground — and the open frameworks that implement many of the methods in this guide.
 
-A catalogue of attacks is only half the picture; reproducible evaluation is the other half. Note the recurring caveat from the evaluation literature: a benchmark or framework is **not** a new attack primitive, and you should not count it (or each transformation it bundles) as an additional method.
+A catalogue of attacks is only half the picture; reproducible evaluation is the other half. Knowing that a technique *can* elicit unsafe output tells you little without a way to measure how often it succeeds, against which models, and whether a proposed defence actually moves the number. This appendix gathers the common ground the field has converged on for that purpose: shared benchmarks and datasets that fix a behaviour set and a judging rubric, evaluation harnesses for agentic and multimodal settings, and the open red-team frameworks that re-implement many of the methods described elsewhere in this guide.
+
+Use these resources to reproduce a result, to compare an attack or defence against a published baseline on a level footing, and to ground any claim of "success" in a scoring method others can inspect. Treat the frameworks as a starting point for your own evaluation harness rather than a finished verdict on any one model.
+
+One caveat recurs throughout the evaluation literature and is worth stating plainly: a benchmark or framework is **not** a new attack primitive. A scanner that bundles a dozen transformations, or a toolkit that wraps several published orchestrators, is a convenience for measurement — not evidence of a dozen distinct methods. Do not count a tool (or each transformation it ships) as an additional attack when tallying the catalogue.
 
 ## Benchmarks & datasets
 

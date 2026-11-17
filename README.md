@@ -2,9 +2,9 @@
 
 > A field guide to how large language models actually get broken — the methodologies, their mechanisms, their origins, and what they teach defenders.
 
-This is a **defensive, educational** catalogue of published AI red-teaming and jailbreak *methodologies* — from the Crescendo multi-turn pattern and AutoDAN's evolutionary search to mixture-of-attacker swarms, multimodal attacks, RAG poisoning, and agent-memory backdoors. It collects **120+ named methods** across **21 mechanism families**, organised the way a textbook would, so that security teams, model builders, and researchers share a common vocabulary for how models fail.
+This is a **defensive, educational** field guide — written to be **read like a book** — to published AI red-teaming and jailbreak *methodologies*, from the Crescendo multi-turn pattern and AutoDAN's evolutionary search to mixture-of-attacker swarms, multimodal attacks, RAG poisoning, and agent-memory backdoors. It covers **120+ named methods** across **21 mechanism families** in roughly **50,000 words**, organised the way a textbook would, so that security teams, model builders, and researchers share a common vocabulary for how models fail.
 
-Every entry is a **conceptual summary**: *how a class of attack works and why it bypasses alignment*, with its origin and a link to the primary source. It deliberately contains **no working jailbreak strings, payloads, or step-by-step recipes**. Everything here is already public — published in a paper or a vendor advisory — and cited so you can read the original.
+Each chapter opens with a short narrative that explains what unites its family, keeps a **quick-reference table** for scanning, and then devotes a full section to every attack — *what it is, the precise mechanism and why it bypasses alignment, its lineage, and the defensive lesson* — each with a link to the primary source. You can read a chapter end-to-end, or jump straight to an attack from the table. It deliberately contains **no working jailbreak strings, payloads, or step-by-step recipes**. Everything here is already public — published in a paper or a vendor advisory — and cited so you can read the original.
 
 ---
 
@@ -23,7 +23,7 @@ Jailbreaks are usually sliced along two axes:
 
 On top of those sit **who drives the attack** (a human, an optimiser, an attacker-LLM, or a swarm of agents), **how many turns** it takes, and **which modality** it enters through (text, image, audio, retrieved documents, tool metadata, or training data). The chapters below group methods by their **core mechanism**, because that is how practitioners actually reason about defences.
 
-New to the field? Start with **[Chapter 00 — Foundations](chapters/00-foundations.md)**: the two mental models (competing objectives & mismatched generalisation) explain almost everything that follows.
+Each chapter stands on its own, but the book has an arc — it moves from *why* jailbreaks work, through the prompt-level and automated-search attacks, into the representation, injection, multimodal, and model-level families. New to the field? Read it in order, starting with **[Chapter 00 — Foundations](chapters/00-foundations.md)**: the two mental models (competing objectives & mismatched generalisation) explain almost everything that follows. Already fluent? Use the contents below as an index and jump in anywhere.
 
 ---
 

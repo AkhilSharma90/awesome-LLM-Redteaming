@@ -4,7 +4,9 @@
 
 > ⚠️ **These are NOT established methods.** Each surfaced during research, but its primary source could not be confirmed. They are excluded from the catalogue's method count and should **not** be cited until verified.
 
-The candidate identifiers below are recorded **as plain text, not links**, precisely because they are unconfirmed — a candidate ID may not resolve, or may point to a different paper. If you can confirm one against its primary source, please open a PR to promote it into the right chapter (and make the citation a real link); if it turns out not to exist, open an issue so we can remove it.
+**Read this appendix differently from every other one in the book.** Everything else in this guide rests on a primary source that was opened and checked; the entries here do not. Each is a *lead* — a title, a provisional attribution, and a claimed area that appeared in an index or a summary but whose primary page has not been confirmed. Any one of them may turn out to be real, misattributed, a duplicate of a method already catalogued, or nonexistent. Until a lead is verified, do not treat it as a real technique, do not build on it, and above all **do not cite it** — citing an unconfirmed lead launders an unchecked claim into the record, which is exactly what this guide exists to avoid. These rows are kept out of the catalogue's method count on purpose.
+
+The candidate identifiers below are recorded **as plain text, not links**, precisely because they are unconfirmed — a candidate ID may not resolve, may have been transcribed imperfectly, or may point to an entirely different paper. Keeping them unlinked is a deliberate signal: an un-clickable ID is a reminder that nothing here has been checked. If you can confirm one against its primary source, please open a PR to promote it into the right chapter (and only then make the citation a real link); if it turns out not to exist, open an issue so we can remove it.
 
 | Lead | Indexed attribution (provisional) | Claimed area | Candidate ID (unverified) | Why it's here, not in the catalogue |
 | --- | --- | --- | --- | --- |

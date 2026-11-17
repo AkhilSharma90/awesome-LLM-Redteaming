@@ -4,6 +4,10 @@
 
 > Several distinct methods share names, and several names are really one evolving paper. This appendix keeps the lineage straight so the catalogue doesn't double-count — or wrongly merge — them.
 
+Names in this field are noisy. Two independent teams reach for the same memorable label (there are two unrelated "AutoDAN"s), a single project is renamed between preprint and publication (Siege became Tempest), and a cluster of similar-sounding agent attacks turn out to assume very different attacker access. Left unexamined, these collisions corrupt a catalogue in both directions: they inflate the method count by listing one evolving paper twice, and they erase real distinctions by merging two different contributions under a shared name. Getting the lineage right is therefore not pedantry — it is what makes the count trustworthy.
+
+Read each row as a ruling. The first column names the collision or ambiguity; the middle column gives the merge guidance — whether the entries are genuinely distinct methods, variants nested under a parent, or one work under two names, and which label the catalogue treats as canonical; the final column anchors that ruling to primary sources so you can check it yourself. Every row is retained deliberately, including the ones that resolve to "keep separate," because the record of *why* two things were not merged is as useful as the merges themselves. The notes after the table collect patterns the catalogue deliberately declines to promote to standalone entries, and the design rule that governs how the catalogue grows.
+
 | Name / issue | Merge guidance | Primary grounding |
 | --- | --- | --- |
 | **AutoDAN name collision** | Xiaogeng Liu et al.'s AutoDAN uses hierarchical **genetic** search (→ [Ch. 07](07-evolutionary-and-quality-diversity.md)). Sicheng Zhu et al.'s independently named AutoDAN uses **gradients** and readability objectives (→ [Ch. 05](05-gradient-and-token-level.md)). Two different papers. | [Liu, 2310.04451](https://arxiv.org/abs/2310.04451) · [Zhu, 2310.15140](https://arxiv.org/abs/2310.15140) |
