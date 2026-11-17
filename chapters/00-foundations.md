@@ -1,0 +1,17 @@
+# 00 · Foundations — why jailbreaks work at all
+
+[← Back to index](../README.md)
+
+> Before the catalogue: the mental models that explain almost every technique that follows.
+
+Nearly every attack in this guide is, at bottom, an instance of one of two root causes named by the early safety literature — **competing objectives** (the model is trained to be both helpful and safe, and the attacker engineers a situation where refusing looks like disobeying) and **mismatched generalisation** (safety training covers a narrower slice of the input space than capability training, so inputs that are out-of-distribution for the *safety* data slip through while the model still understands them). The primitives below are the building blocks reused inside bigger attacks.
+
+| Method | Origin | Year / venue | Mechanism | How it works (conceptual) | Sources |
+| --- | --- | --- | --- | --- | --- |
+| **Competing Objectives & Mismatched Generalization** | Alexander Wei, Nika Haghtalab, Jacob Steinhardt | 2023 — NeurIPS | foundational framing | The seminal *"Jailbroken: How Does LLM Safety Training Fail?"* names two root causes.<br>**Competing objectives:** helpfulness is pitted against safety, so a prompt is built where refusing looks like disobeying.<br>**Mismatched generalisation:** safety data covers less of the input space than capability data, so rare encodings/formats slip through.<br>Almost every later attack is an instance of one or both. | [arXiv:2307.02483](https://arxiv.org/abs/2307.02483) |
+| **Prefix Injection & Refusal Suppression** | Community; benchmarked by Wei et al. | 2023 | foundational; prompt-level primitive | **Prefix injection** makes the model begin its answer with a committed, affirmative phrase; autoregressive momentum carries it forward.<br>**Refusal suppression** bans the vocabulary of refusal ("cannot", "sorry", "unable"), removing the usual exits.<br>Neither is powerful alone on modern models.<br>Both remain common components inside automated and multi-turn pipelines. | [arXiv:2307.02483](https://arxiv.org/abs/2307.02483) |
+| **Universal Adversarial Triggers (UAT)** | Eric Wallace, Shi Feng, Nikhil Kandpal, Matt Gardner, Sameer Singh | 2019 — EMNLP-IJCNLP | foundational; gradient/token-level | A shared token sequence is optimised to influence many inputs rather than one example.<br>The original work includes language-generation attacks on GPT-2, alongside classification and QA.<br>It exploits reusable weaknesses in learned associations and conditional generation.<br>An antecedent of modern suffix attacks — not a claim that 2019 models had contemporary chat-safety policies. | [arXiv:1908.07125](https://arxiv.org/abs/1908.07125) · [ACL Anthology](https://aclanthology.org/D19-1221/) |
+| **Red Teaming Language Models with Language Models** | Ethan Perez et al.; DeepMind & NYU | 2022 — EMNLP | foundational; attacker-LLM search | A separate language model generates test inputs for a target model.<br>A learned evaluator supplies feedback about undesirable responses.<br>Generation, supervised adaptation, and RL provide different exploration strategies.<br>It finds failures by searching beyond a fixed human-authored test set — a red-teaming *framework*, not one universal jailbreak. | [arXiv:2202.03286](https://arxiv.org/abs/2202.03286) · [ACL Anthology](https://aclanthology.org/2022.emnlp-main.225/) |
+
+---
+[← Index](../README.md) · [Next: 01 · Role-play & nesting →](01-roleplay-and-nesting.md)

@@ -1,0 +1,18 @@
+# 03 · Long-context & in-context conditioning
+
+[← Back to index](../README.md)
+
+> Use the sheer size of the context window as the weapon: show the model so many examples of "complying" — or so much distracting material — that it just continues the pattern.
+
+Ever-larger context windows raised the stakes here. These attacks exploit in-context learning and the way position and load within a long prompt change safety behaviour.
+
+| Method | Origin | Year / venue | Mechanism | How it works (conceptual) | Sources |
+| --- | --- | --- | --- | --- | --- |
+| **Many-shot Jailbreaking (MSJ)** | Anthropic | 2024 (NeurIPS 2024) | long-context; in-context learning | Fill the prompt with a long transcript of **fabricated dialogue** in which an assistant answers many harmful questions willingly, then append the real question.<br>In-context learning infers "the rules of this conversation" from dozens or hundreds of demonstrations and continues in kind.<br>Effectiveness scales with the number of shots along a predictable curve.<br>Anthropic published it with mitigations that sharply cut its success. | [Anthropic](https://www.anthropic.com/research/many-shot-jailbreaking) |
+| **Cognitive Overload** (Xu et al.) | Nan Xu, Fei Wang, Ben Zhou, Bangzheng Li, Chaowei Xiao, Muhao Chen | 2023 (Findings of NAACL 2024) | task-overload; encoding/obfuscation | Combines demanding interpretation tasks — multilingual processing, veiled meaning, reversed causal reasoning.<br>Those tasks change the context in which safety-relevant intent must be recognised.<br>The authors interpret failures through a cognitive-overload analogy.<br>That analogy is explanatory framing, not proof of human-like cognition; distinct from the later long-context work with a similar name. | [arXiv:2311.09827](https://arxiv.org/abs/2311.09827) · [Findings](https://aclanthology.org/2024.findings-naacl.224/) |
+| **Cognitive Overload Attack** (Upadhayay et al.) | Bibek Upadhayay, Vahid Behzadan, Amin Karbasi | 2024 — arXiv | long-context; task-overload | Studies deliberately overloaded prompts within in-context learning settings.<br>Complex contextual demands compete with reliable application of safety instructions.<br>The authors analyse results using cognitive-load theory.<br>Keep the empirical behaviour separate from the proposed explanation; distinct from Xu et al. and from many-shot. See [Appendix C](appendix-C-aliases-and-dedup.md). | [arXiv:2410.11272](https://arxiv.org/abs/2410.11272) |
+| **NINJA — Needle-in-haystack Jailbreak** | Shah, Wu, Saxena, Zhong, Robey, Raghunathan | 2025 preprint; rev. 2026 | long-context | A harmful goal is embedded in a much larger context of benign model-generated material.<br>Position within that context affects safety behaviour.<br>It does *not* require filling the context with examples of harmful compliance.<br>A distinct long-context pattern beyond MSJ: apparently benign surrounding content can change whether the model refuses. | [arXiv:2511.04707](https://arxiv.org/abs/2511.04707) |
+| **BadChain — Backdoor Chain-of-Thought** | Xiang, Jiang, Xiong, Ramasubramanian, Poovendran, Li | 2024 — ICLR | in-context poisoning; reasoning manipulation | Demonstration examples associate a trigger with an additional, malicious reasoning step.<br>The target copies the demonstrated reasoning pattern when the trigger is present.<br>The altered reasoning corrupts the final answer **without changing model weights**.<br>Its backdoor lives in the in-context examples — distinct from training-data backdoors and from ordinary many-shot jailbreaks. | [arXiv:2401.12242](https://arxiv.org/abs/2401.12242) |
+
+---
+[← 02 · Multi-turn](02-multi-turn.md) · [Index](../README.md) · [Next: 04 · Attacker-LLM search →](04-attacker-llm-search.md)

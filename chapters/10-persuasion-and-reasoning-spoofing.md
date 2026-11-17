@@ -1,0 +1,18 @@
+# 10 · Persuasion, framing & reasoning spoofing
+
+[← Back to index](../README.md)
+
+> Skip the technical tricks and just persuade — using the same rhetorical levers that work on people, or by hijacking the model's own displayed reasoning.
+
+This family reframes jailbreaking as fundamentally a human-communication and reasoning problem: authority, reciprocity, commitment, temporal reframing, stylistic indirection, and manipulation of a reasoning model's deliberation.
+
+| Method | Origin | Year / venue | Mechanism | How it works (conceptual) | Sources |
+| --- | --- | --- | --- | --- | --- |
+| **PAP — Persuasive Adversarial Prompts** | Yi Zeng et al. | 2024 (ACL 2024) | persuasion taxonomy | *"How Johnny Can Persuade LLMs to Jailbreak Them."*<br>Draws on social-science research to build a **taxonomy of ~40 persuasion techniques** — authority, reciprocity, commitment, emotional appeal, logical reframing — and automatically rewrites a harmful request using them.<br>Framed as a persuasive, humanised appeal rather than a command, requests slip past models hardened against obvious attacks.<br>Reframed jailbreaking as a human-communication problem. | [arXiv:2401.06373](https://arxiv.org/abs/2401.06373) |
+| **Past-tense reformulation** | Maksym Andriushchenko, Nicolas Flammarion | 2024 — arXiv | persuasion; temporal reframing | A request is reframed as a question about **historical events or past behaviour**.<br>Its underlying informational objective can remain similar to a present-tense request.<br>The paper compares refusal behaviour across models and temporal framings.<br>The weakness is generalisation across tense: a historical description can still communicate actionable information. | [arXiv:2407.11969](https://arxiv.org/abs/2407.11969) |
+| **Adversarial Poetry** | Piercosma Bisconti, Matteo Prandi, Federico Pierucci et al. | 2025 — arXiv | persuasion; stylistic reframing | Unsafe requests are expressed through **poetic form** rather than expository prose.<br>The study compares handcrafted verse with automated transformations of benchmark prompts.<br>Stylistic and semantic indirection alter the input distribution while preserving intent.<br>Evidence of a format-generalisation gap in the evaluated models, not proof of a universal jailbreak. | [arXiv:2511.15304](https://arxiv.org/abs/2511.15304) |
+| **H-CoT — Hijacking Chain-of-Thought** | Martin Kuo, Jianyi Zhang, Aolin Ding et al. | 2025 — arXiv | reasoning-context manipulation | Draws on a model's **displayed intermediate reasoning** to construct persuasive reasoning context.<br>That context influences how a reasoning model evaluates a later request.<br>It targets the safety-deliberation *process*, not only the final response format.<br>Displayed reasoning is the attack surface — this does not establish access to a provider's undisclosed internal chain of thought. | [arXiv:2502.12893](https://arxiv.org/abs/2502.12893) |
+| **DGA — Detail Guidance Attack** | Wenzhuo Xu, Zonghao Ying, Deyue Zhang et al. | 2026 — arXiv | attacker-LLM search; semantic camouflage | An auxiliary LLM constructs **detailed requests resembling ordinary user queries**.<br>The victim receives the resulting request in a single interaction.<br>Probes how ambiguous or dual-use intent affects model and filter decisions.<br>The mechanism is resemblance to normal requests; treat effectiveness claims as preliminary (very recent preprint). | [arXiv:2611.17818](https://arxiv.org/abs/2611.17818) |
+
+---
+[← 09 · Encoding](09-encoding-and-obfuscation.md) · [Index](../README.md) · [Next: 11 · Policy-format spoofing →](11-policy-format-spoofing.md)
